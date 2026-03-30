@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ValidTill</title>
+    <meta
+      name="description"
+      content="Choose English or Simplified Chinese for ValidTill product, support, and privacy pages."
+    >
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+      .language-gateway {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 32px 20px;
+      }
+
+      .gateway-shell {
+        width: min(100%, 1040px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        gap: 40px;
+        align-items: center;
+      }
+
+      .gateway-copy {
+        max-width: 560px;
+      }
+
+      .gateway-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .gateway-brand img {
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+        box-shadow: 0 18px 42px rgba(42, 31, 16, 0.16);
+      }
+
+      .gateway-brand-text {
+        display: grid;
+        gap: 3px;
+      }
+
+      .gateway-brand-text strong {
+        font-size: 1.2rem;
+        letter-spacing: -0.03em;
+      }
+
+      .gateway-brand-text span {
+        color: var(--text-muted);
+        font-size: 0.96rem;
+      }
+
+      .gateway-copy h1 {
+        margin: 0 0 18px;
+        font-family: var(--font-display);
+        font-size: clamp(3.2rem, 8vw, 6.3rem);
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+      }
+
+      .gateway-copy p {
+        margin: 0;
+        max-width: 34rem;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .gateway-note {
+        margin-top: 22px;
+        color: #7b6647;
+        font-size: 0.94rem;
+        letter-spacing: 0.01em;
+      }
+
+      .language-panel {
+        position: relative;
+        padding: 30px;
+        border: 1px solid rgba(123, 98, 62, 0.14);
+        border-radius: 30px;
+        background: linear-gradient(180deg, rgba(255, 251, 245, 0.95), rgba(255, 248, 240, 0.82));
+        box-shadow: 0 22px 54px rgba(42, 31, 16, 0.12);
+        overflow: hidden;
+      }
+
+      .language-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(183, 139, 66, 0.14), transparent 34%);
+      }
+
+      .language-panel-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .language-panel-label {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(183, 139, 66, 0.12);
+        color: #8a6428;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .language-list {
+        margin-top: 22px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .language-link {
+        display: grid;
+        gap: 6px;
+        padding: 20px 22px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(123, 98, 62, 0.12);
+        transition: transform 140ms ease, border-color 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
+      }
+
+      .language-link:hover,
+      .language-link:focus-visible {
+        transform: translateY(-2px);
+        border-color: rgba(183, 139, 66, 0.28);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 18px 36px rgba(42, 31, 16, 0.09);
+      }
+
+      .language-link strong {
+        font-size: 1.38rem;
+        letter-spacing: -0.03em;
+      }
+
+      .language-link span {
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      .gateway-footer {
+        margin-top: 18px;
+        color: var(--text-muted);
+        font-size: 0.94rem;
+      }
+
+      @media (max-width: 900px) {
+        .language-gateway {
+          padding: 48px 20px;
+        }
+
+        .gateway-shell {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+
+        .gateway-copy h1 {
+          font-size: clamp(2.8rem, 16vw, 4.8rem);
+        }
+
+        .language-panel {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="language-gateway">
+      <div class="gateway-shell">
+        <section class="gateway-copy" aria-labelledby="gateway-title">
+          <a class="gateway-brand" href="./" aria-label="ValidTill home">
+            <img src="assets/validtill-icon.jpg" alt="ValidTill app icon">
+            <div class="gateway-brand-text">
+              <strong>ValidTill</strong>
+              <span>Coupon, gift card, and voucher tracker</span>
+            </div>
+          </a>
+          <h1 id="gateway-title">Choose your language.</h1>
+          <p>
+            Explore ValidTill in the language that fits your audience. Product details, support
+            information, and privacy policy pages are available in English and Simplified Chinese.
+          </p>
+          <div class="gateway-note">English and 简体中文 are available.</div>
+        </section>
+
+        <section class="language-panel" aria-label="Language selection">
+          <div class="language-panel-inner">
+            <div class="language-panel-label">Language</div>
+            <div class="language-list">
+              <a class="language-link" href="en/">
+                <strong>English</strong>
+                <span>Product overview, support resources, and privacy policy.</span>
+              </a>
+              <a class="language-link" href="zh/">
+                <strong>简体中文</strong>
+                <span>产品介绍、支持页面与隐私政策。</span>
+              </a>
+            </div>
+            <div class="gateway-footer">&copy; 2026 Oaky</div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
