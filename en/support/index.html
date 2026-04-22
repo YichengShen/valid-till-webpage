@@ -3,12 +3,110 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ValidTill | Support</title>
-    <meta name="description" content="Support and FAQ for the ValidTill iOS app.">
+    <title>ValidTill Support | FAQ, restore purchases, and reminders</title>
+    <meta
+      name="description"
+      content="Get help with ValidTill reminders, widgets, language settings, restore purchases, and subscription questions."
+    >
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#f5efe6">
+    <link rel="canonical" href="https://validtill.oaky.ltd/en/support/">
+    <link rel="alternate" hreflang="en" href="https://validtill.oaky.ltd/en/support/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://validtill.oaky.ltd/zh/support/">
+    <link rel="alternate" hreflang="x-default" href="https://validtill.oaky.ltd/">
+    <meta property="og:site_name" content="ValidTill">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:title" content="ValidTill Support | FAQ, restore purchases, and reminders">
+    <meta
+      property="og:description"
+      content="Get help with ValidTill reminders, widgets, language settings, restore purchases, and subscription questions."
+    >
+    <meta property="og:url" content="https://validtill.oaky.ltd/en/support/">
+    <meta property="og:image" content="https://validtill.oaky.ltd/assets/social-preview-en.jpg">
+    <meta property="og:image:alt" content="ValidTill social preview image with the app logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+      name="twitter:title"
+      content="ValidTill Support | FAQ, restore purchases, and reminders"
+    >
+    <meta
+      name="twitter:description"
+      content="Get help with ValidTill reminders, widgets, language settings, restore purchases, and subscription questions."
+    >
+    <meta name="twitter:image" content="https://validtill.oaky.ltd/assets/social-preview-en.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:image:alt" content="ValidTill social preview image with the app logo">
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16x16.png">
     <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
     <link rel="stylesheet" href="../../assets/styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where is my data stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Coupon data, profile settings, and reminder preferences are stored locally on your device. A shared local container is also used so the widget can read the latest snapshot data."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I manage my subscription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Subscriptions are managed through your Apple ID settings. You can view, change, or cancel them anytime in the App Store app under your Account > Subscriptions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I restore my purchase on a new device?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can restore your Pro status by tapping Restore Purchases in the Membership section of the app. Ensure you are signed in with the same Apple ID used for the original purchase."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the Lifetime plan a subscription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The Lifetime plan is a one-time purchase that permanently unlocks Pro features for your Apple ID without any recurring fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why didn’t I receive a reminder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Check whether notification permission is enabled, whether the coupon has a reminder lead time, and whether the coupon is already expired or marked as used."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the app support more than one language?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. ValidTill supports English and Simplified Chinese, and you can switch the app language in the Profile tab."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use the app without internet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The core coupon-tracking experience is designed to work offline."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -20,12 +118,28 @@
             <span class="brand__tag">Support</span>
           </div>
         </a>
-        <nav class="header-links" aria-label="Primary">
-          <a href="../">Product</a>
-          <a class="is-active" href="./">Support</a>
-          <a href="../privacy/">Privacy</a>
-          <a href="../../zh/support/">简体中文</a>
-        </nav>
+        <div class="header-actions">
+          <nav class="header-links header-links--desktop" aria-label="Primary">
+            <a href="../">Product</a>
+            <a class="is-active" href="./">Support</a>
+            <a href="../privacy/">Privacy</a>
+          </nav>
+          <details class="header-menu">
+            <summary class="header-menu__trigger" aria-label="Pages">
+              <span class="header-menu__bars" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </summary>
+            <div class="header-menu__panel">
+              <a href="../">Product</a>
+              <a class="is-active" href="./">Support</a>
+              <a href="../privacy/">Privacy</a>
+            </div>
+          </details>
+          <a class="header-language" href="../../zh/support/">简体中文</a>
+        </div>
       </div>
     </header>
 
@@ -93,6 +207,31 @@
             </article>
 
             <article class="faq">
+              <h3>How do I manage my subscription?</h3>
+              <p>
+                Subscriptions are managed through your Apple ID settings. You can view, change, or
+                cancel them anytime in the App Store app under your Account &gt; Subscriptions.
+              </p>
+            </article>
+
+            <article class="faq">
+              <h3>How do I restore my purchase on a new device?</h3>
+              <p>
+                You can restore your Pro status by tapping "Restore Purchases" in the Membership
+                section of the app. Ensure you are signed in with the same Apple ID used for the
+                original purchase.
+              </p>
+            </article>
+
+            <article class="faq">
+              <h3>Is the Lifetime plan a subscription?</h3>
+              <p>
+                No. The Lifetime plan is a one-time purchase that permanently unlocks Pro features
+                for your Apple ID without any recurring fees.
+              </p>
+            </article>
+
+            <article class="faq">
               <h3>Why didn’t I receive a reminder?</h3>
               <p>
                 Check whether notification permission is enabled, whether the coupon has a reminder
@@ -126,9 +265,11 @@
           <a href="../">Product</a>
           <a href="./">Support</a>
           <a href="../privacy/">Privacy</a>
+          <a href="https://apps.apple.com/us/app/validtill/id6760955448" target="_blank" rel="noopener noreferrer">Download App</a>
           <a href="../../zh/support/">简体中文</a>
         </div>
       </div>
     </footer>
+    <script src="../../assets/site.js" defer></script>
   </body>
 </html>
