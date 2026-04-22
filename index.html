@@ -52,35 +52,37 @@
     </script>
     <style>
       .language-gateway {
-        min-height: 100vh;
+        min-height: 100svh;
         display: grid;
         place-items: center;
         padding: 32px 20px;
       }
 
       .gateway-shell {
-        width: min(100%, 1040px);
+        width: min(100%, 1100px);
         display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-        gap: 40px;
+        grid-template-columns: minmax(0, 0.96fr) minmax(320px, 0.84fr);
+        gap: 56px;
         align-items: center;
       }
 
       .gateway-copy {
-        max-width: 560px;
+        max-width: 520px;
+        display: grid;
+        gap: 20px;
       }
 
       .gateway-brand {
         display: inline-flex;
         align-items: center;
         gap: 14px;
-        margin-bottom: 28px;
+        margin-bottom: 0;
       }
 
       .gateway-brand img {
-        width: 58px;
-        height: 58px;
-        border-radius: 16px;
+        width: 68px;
+        height: 68px;
+        border-radius: 20px;
         box-shadow: 0 18px 42px rgba(42, 31, 16, 0.16);
       }
 
@@ -100,9 +102,9 @@
       }
 
       .gateway-copy h1 {
-        margin: 0 0 18px;
+        margin: 0;
         font-family: var(--font-display);
-        font-size: clamp(3.2rem, 8vw, 6.3rem);
+        font-size: clamp(3.2rem, 8vw, 6.5rem);
         line-height: 0.9;
         letter-spacing: -0.055em;
       }
@@ -111,22 +113,15 @@
         margin: 0;
         max-width: 34rem;
         color: var(--text-muted);
-        font-size: 1.1rem;
-        line-height: 1.8;
-      }
-
-      .gateway-note {
-        margin-top: 22px;
-        color: #7b6647;
-        font-size: 0.94rem;
-        letter-spacing: 0.01em;
+        font-size: 1.05rem;
+        line-height: 1.75;
       }
 
       .language-panel {
         position: relative;
-        padding: 30px;
+        padding: 28px;
         border: 1px solid rgba(123, 98, 62, 0.14);
-        border-radius: 30px;
+        border-radius: 32px;
         background: linear-gradient(180deg, rgba(255, 251, 245, 0.95), rgba(255, 248, 240, 0.82));
         box-shadow: 0 22px 54px rgba(42, 31, 16, 0.12);
         overflow: hidden;
@@ -161,17 +156,25 @@
         text-transform: uppercase;
       }
 
+      .language-panel__intro {
+        margin: 10px 0 0;
+        color: var(--text-muted);
+        font-size: 0.98rem;
+        line-height: 1.62;
+      }
+
       .language-list {
-        margin-top: 22px;
+        margin-top: 18px;
         display: grid;
-        gap: 14px;
+        gap: 12px;
       }
 
       .language-link {
+        position: relative;
         display: grid;
         gap: 6px;
-        padding: 20px 22px;
-        border-radius: 22px;
+        padding: 22px 54px 22px 22px;
+        border-radius: 24px;
         background: rgba(255, 255, 255, 0.72);
         border: 1px solid rgba(123, 98, 62, 0.12);
         transition: transform 140ms ease, border-color 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
@@ -185,8 +188,19 @@
         box-shadow: 0 18px 36px rgba(42, 31, 16, 0.09);
       }
 
+      .language-link::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: 22px;
+        transform: translateY(-50%);
+        color: var(--gold);
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
       .language-link strong {
-        font-size: 1.38rem;
+        font-size: 1.3rem;
         letter-spacing: -0.03em;
       }
 
@@ -196,9 +210,29 @@
       }
 
       .gateway-footer {
-        margin-top: 18px;
+        margin-top: 20px;
         color: var(--text-muted);
         font-size: 0.94rem;
+      }
+
+      @keyframes gateway-rise-up {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .gateway-copy {
+        animation: gateway-rise-up 640ms ease both;
+      }
+
+      .language-panel {
+        animation: gateway-rise-up 640ms ease 100ms both;
       }
 
       @media (max-width: 900px) {
@@ -219,6 +253,41 @@
           padding: 24px;
         }
       }
+
+      @media (max-width: 640px) {
+        .gateway-shell {
+          gap: 22px;
+        }
+
+        .gateway-brand img {
+          width: 60px;
+          height: 60px;
+          border-radius: 17px;
+        }
+
+        .language-panel {
+          padding: 20px;
+        }
+
+        .language-link {
+          padding: 20px 50px 20px 18px;
+        }
+
+        .language-link::after {
+          right: 18px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .gateway-copy,
+        .language-panel {
+          animation: none;
+        }
+
+        .language-link {
+          transition: background-color 140ms ease, border-color 140ms ease;
+        }
+      }
     </style>
   </head>
   <body>
@@ -234,15 +303,17 @@
           </a>
           <h1 id="gateway-title">Choose your language.</h1>
           <p>
-            Explore ValidTill in the language that fits your audience. Product details, support
-            information, and privacy policy pages are available in English and Simplified Chinese.
+            Choose English or Simplified Chinese to browse the ValidTill site.
           </p>
-          <div class="gateway-note">English and 简体中文 are available.</div>
         </section>
 
         <section class="language-panel" aria-label="Language selection">
           <div class="language-panel-inner">
             <div class="language-panel-label">Language</div>
+            <p class="language-panel__intro">
+              Product pages, support resources, and privacy information are available in both
+              languages.
+            </p>
             <div class="language-list">
               <a class="language-link" href="en/">
                 <strong>English</strong>
